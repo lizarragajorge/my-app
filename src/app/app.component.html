@@ -1,5 +1,5 @@
 <div class="container-fluid">
-  {{page}}
+
   <home-page *ngIf="page == 'home'" (selectPerson)="setPage($event)"> </home-page>
   <profile-page *ngIf="page == 'profile'"> </profile-page>
   <actions-page *ngIf="page == 'actions'"> </actions-page>

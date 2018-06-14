@@ -1,9 +1,12 @@
 <div class="container-fluid">
 
+<<<<<<< HEAD
+=======
+  <requests-page *ngIf="page == 'requests'"></requests-page> 
+>>>>>>> b0057e0b045a1534dfcf6b4f8980e1ff334446c3
   <home-page *ngIf="page == 'home'" (selectPerson)="setPage($event)"> </home-page>
   <profile-page *ngIf="page == 'profile'"> </profile-page>
   <actions-page *ngIf="page == 'actions'"> </actions-page>
-  <!-- <requests-page *ngIf="page == 'requests'"></requests-page>  -->
 
   <ul id="nav_bottom" class="nav nav-pills nav-fill">
     <li class="nav-item">
@@ -17,7 +20,7 @@
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link">
+      <a (click)="setPage('requests')" class="nav-link">
         <i class="fas fa-envelope fa-lg {{page == 'home' ? 'requests' : ''}}"></i>
       </a>
     </li>

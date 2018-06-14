@@ -1,6 +1,7 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 import { Person } from './Person';
 import { AppComponent } from './app.component';
+import { AngularFireDatabase } from 'angularfire2/database';
 
 @Component({
   selector: 'home-page',
@@ -12,17 +13,24 @@ export class HomeComponent
 {
   title = 'app';
   actionPage = false;
+  public firebase;
+  public people;
+  public person;
 
-  heroes = [
-    new Person("Brandon", "Buchanan"),
-    new Person("Jorge", "Garcia"),
-    new Person("Drake", "Loud"),
-    new Person("Pierre", "Pierre"),
-    new Person("Brandon", "Buchanan"),
-    new Person("Jorge", "Garcia"),
-    new Person("Drake", "Loud"),
-    new Person("Pierre", "Pierre")
-  ]
+  constructor(private angularFire: AngularFireDatabase) {
+    this.person = null;
+    this.firebase = this.angularFire.list('/people');
+  }
+
+  getActivity() {
+    return this.angularFire.list('/people').valueChanges();
+  }
+
+  ngOnInit() {
+    this.getActivity().subscribe(res => {
+      this.people = res;
+    });
+  }
 
   @Output() selectPerson=new EventEmitter<string>();
 

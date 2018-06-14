@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Person } from './Person';
 import { Activity } from './Activity';
+import { AngularFireDatabase } from 'angularfire2/database';
 
 @Component({
     selector: 'profile-page',
@@ -9,17 +10,38 @@ import { Activity } from './Activity';
 })
 
 export class ProfileComponent {
+
+    public activity;
+    public activities;
+    public firebase;
+
+    constructor(private angularFire: AngularFireDatabase) {
+        this.activity = new Person("Brandon", "Buchanan");
+        this.firebase = this.angularFire.list('/activity');
+    }
+
+    getActivity() {
+        return this.angularFire.list('/activity').valueChanges();
+    }
+
+    ngOnInit() {
+        this.getActivity().subscribe(res => {
+            this.activities = res;
+        });
+    }
+
     title = 'app';
 
-    activities = [
-    new Activity("Food", "utensils"),
-    new Activity("Coffee", "coffee"),
-    new Activity("Drinks", "beer"),
-    new Activity("Football", "football-ball"),
-    new Activity("Soccer", "futbol"),
-    new Activity("Chess", "chess"),
-    new Activity("Hockey", "hockey-puck"),
-    new Activity("Reading", "book-open"),
-    new Activity("Bird Watching", "crow")
-];
+    addActivity() {
+        console.log(this.activity);
+        if (this.activity) {
+            this.firebase.push({
+                activity: this.activity,
+                createdDate: (new Date()).getTime()
+            });
+        } else {
+            alert('Enter task');
+        }
+    }
+
 }

@@ -14,7 +14,7 @@
         <div class="row">
             <div class="col">
                 <ul id="activity_list" class="list-group list-activities">
-                    <li *ngFor="let activity of activities" class="list-group-item"> <i class="fas fa-{{ activity.icon }}"></i> {{ activity.name }}</li>
+                    <li *ngFor="let activity of activities" class="list-group-item"> <i class="fas fa-{{ activity.activity.icon }}"></i> {{ activity.activity.name }}</li>
                 </ul>
             </div>
 
@@ -33,7 +33,7 @@
         <div class="row">
 
             <div class="col">
-                <div class="profile-btn btn btn-success">Save</div>
+                <div (click)="addActivity()" class="profile-btn btn btn-success">Save</div>
             </div>
         </div>
     </div>

@@ -1,29 +1,9 @@
 <div class="container-fluid">
 
-  {{getPage()}}
-  <!-- <span [ngSwitch]=page>
-    <p *ngSwitchCase="home">
-      <home-page></home-page>
-    </p>
-    <p *ngSwitchCase="profile">
-      Profile
-    </p>
-    <p *ngSwitchCase="requests">
-      Requests
-    </p>
-    <p *ngSwitchDefault>
-      No Page State
-    </p>
-  </span> -->
-  
-  <home-page *ngIf="page == 'home'"> </home-page>
-  <!-- <profile-page *ngIf="page == 'profile'"> </profile-page> -->
   <requests-page *ngIf="page == 'requests'"></requests-page> 
-  {{page}}
   <home-page *ngIf="page == 'home'" (selectPerson)="setPage($event)"> </home-page>
   <profile-page *ngIf="page == 'profile'"> </profile-page>
   <actions-page *ngIf="page == 'actions'"> </actions-page>
-  <!-- <requests-page *ngIf="page == 'requests'"></requests-page>  -->
 
   <ul id="nav_bottom" class="nav nav-pills nav-fill">
     <li class="nav-item">
@@ -38,8 +18,6 @@
     </li>
     <li class="nav-item">
       <a (click)="setPage('requests')" class="nav-link">
-        <i class="fas fa-envelope fa-lg"></i>
-      <a class="nav-link">
         <i class="fas fa-envelope fa-lg {{page == 'home' ? 'requests' : ''}}"></i>
       </a>
     </li>

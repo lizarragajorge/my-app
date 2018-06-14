@@ -9,8 +9,6 @@ import { Request } from './Request';
 
 export class RequestsComponent
 {
-  title = 'app';
-  
   heroes = [
     new Request("Brandon", "Buchanan", "Golf"),
     new Request("Jorge", "Garcia", "Rocket League"),

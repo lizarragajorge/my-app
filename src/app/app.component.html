@@ -1,12 +1,11 @@
 <div class="container-fluid">
 
-<<<<<<< HEAD
-=======
   <requests-page *ngIf="page == 'requests'"></requests-page> 
->>>>>>> b0057e0b045a1534dfcf6b4f8980e1ff334446c3
   <home-page *ngIf="page == 'home'" (selectPerson)="setPage($event)"> </home-page>
   <profile-page *ngIf="page == 'profile'"> </profile-page>
-  <actions-page *ngIf="page == 'actions'"> </actions-page>
+  <actions-page *ngIf="page == 'actions'" (selectAction)="setPage($event)"> </actions-page>
+  <ask-page *ngIf="page == 'ask'" > </ask-page>
+
 
   <ul id="nav_bottom" class="nav nav-pills nav-fill">
     <li class="nav-item">

@@ -11,7 +11,8 @@ import { AppComponent } from './app.component';
 export class HomeComponent
 {
   title = 'app';
-  
+  actionPage = false;
+
   heroes = [
     new Person("Brandon", "Buchanan"),
     new Person("Jorge", "Garcia"),
@@ -27,6 +28,11 @@ export class HomeComponent
 
   onSelectPerson(p: string) {
     this.selectPerson.emit(p);
+  }
+
+  setActionPage() {
+    console.log("calling action page")
+    this.actionPage = true;
   }
 
 }

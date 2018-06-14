@@ -6,6 +6,7 @@ import { HomeComponent } from './home.component';
 import { RequestsComponent } from './requests.component';
 import { ProfileComponent } from './profile.component';
 import { ActionsComponent } from './actions.component';
+import { AskComponent } from './ask.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { ActionsComponent } from './actions.component';
     HomeComponent, 
     RequestsComponent,
     ProfileComponent,
-    ActionsComponent
+    ActionsComponent,
+    AskComponent
   ],
   imports: [
     BrowserModule

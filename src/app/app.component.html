@@ -17,7 +17,7 @@
   </span> -->
   
   <home-page *ngIf="page == 'home'"> </home-page>
-  <profile-page *ngIf="page == 'profile'"> </profile-page>
+  <!-- <profile-page *ngIf="page == 'profile'"> </profile-page> -->
   <requests-page *ngIf="page == 'requests'"></requests-page> 
 
   <ul id="nav_bottom" class="nav nav-pills nav-fill">
@@ -32,7 +32,7 @@
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link">
+      <a (click)="setPage('requests')" class="nav-link">
         <i class="fas fa-envelope fa-lg"></i>
       </a>
     </li>

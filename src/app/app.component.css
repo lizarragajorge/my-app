@@ -91,6 +91,25 @@ h3 {
     min-height: 100px;
 }
 
+.request-message{
+    text-align: left;
+    margin-left: 20px;
+}
+
+.request-message-name{
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.request-message-activity{
+    margin-left: 15px;
+}
+
+.request-message-btn{
+    width: 60px;
+    margin: 0 10px;
+}
+
 @media only screen and (min-width: 768px) {
     .list-activities {
         max-height: 30em;

@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { Person } from './Person';
+import { AppComponent } from './app.component';
 
 @Component({
   selector: 'home-page',
@@ -21,4 +22,11 @@ export class HomeComponent
     new Person("Drake", "Loud"),
     new Person("Pierre", "Pierre")
   ]
+
+  @Output() selectPerson=new EventEmitter<string>();
+
+  onSelectPerson(p: string) {
+    this.selectPerson.emit(p);
+  }
+
 }

@@ -1,24 +1,65 @@
 <div class="row">
     <div class="col">
-        <h1>Requests.</h1>
+        <h1>View Your Requests.</h1>
     </div>
 </div>
 
-<ul id="people" class="list-group list-people">
-    <li *ngFor="let hero of heroes" class="people-item list-group-item d-flex justify-content-between align-items-center">
-        <!-- <img class="img-fluid img-person" src="https://loremflickr.com/75/75" /> -->
-        <span class="request-message">
-            <a class="request-message-name"> {{ hero.firstName }} </a>
-            <br/>
-            <a class="request-message-activity"> {{hero.message}} </a>
-        </span>
-        <span>
-            <button class="btn btn-primary request-message-btn" type="button">
-                <i class="fas fa-check"></i>
-            </button>
-            <button class="btn btn-danger request-message-btn" type="button">
-                <i class="fas fa-times"></i>
-            </button>
-        </span>
+<ul class="nav justify-content-center nav-pills nav-fill" id="myTab" role="tablist">
+    <li class="nav-item">
+        <a class="nav-link active" style="font-size: 24px" id="sent-tab" data-toggle="tab" href="#sent" role="tab" aria-controls="sent"
+            aria-selected="true">Sent</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" style="font-size: 24px" id="recieved-tab" data-toggle="tab" href="#recieved" role="tab" aria-controls="recieved"
+            aria-selected="false">Recieved</a>
     </li>
 </ul>
+
+<div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="sent" role="tabpanel" aria-labelledby="sent-tab">
+        <div>
+            <ul id="people" class="list-group list-people">
+                <li *ngFor="let request of sentRequests" class="people-item list-group-item d-flex justify-content-between align-items-center">
+                    <span>
+                        <!-- <div>
+                            <img class="img-fluid img-person" src="https://loremflickr.com/75/75/" />
+                        </div> -->
+                        <span class="request-message">
+                            <a class="request-message-name"> {{ request.firstName + " " + request.lastName }} </a>
+                            <br/>
+                            <a class="request-message-activity"> {{ request.message }} </a>
+                        </span>
+                    </span>
+                    <span>
+                        <button class="btn btn-danger request-message-btn" type="button">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="tab-pane fade" id="recieved" role="tabpanel" aria-labelledby="recieved-tab">
+        <div>
+            <ul id="people" class="list-group list-people">
+                <li *ngFor="let request of recievedRequests" class="people-item list-group-item d-flex justify-content-between align-items-center">
+                    <span class="request-message">
+                        <a class="request-message-name"> {{ request.firstName }} </a>
+                        <br/>
+                        <a class="request-message-activity"> {{ request.message }} </a>
+                    </span>
+                    <span>
+                        <button class="btn btn-primary request-message-btn" type="button">
+                            <i class="fas fa-check"></i>
+                        </button>
+                        <br/>
+                        <button class="btn btn-danger request-message-btn" type="button">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -89,7 +89,7 @@ h3 {
 }
 
 .people-item {
-    min-height: 100px;
+    min-height: 120px;
 }
 
 .request-message{
@@ -99,16 +99,18 @@ h3 {
 
 .request-message-name{
     font-weight: bold;
-    font-size: 16px;
+    font-size: 24px;
 }
 
 .request-message-activity{
-    margin-left: 15px;
+    margin-left: 18px;
+    font-style: italic;
+    font-size: 18px;
 }
 
 .request-message-btn{
-    width: 60px;
-    margin: 0 10px;
+    width: 80px;
+    margin: 5px 5px;
 }
 
 @media only screen and (min-width: 768px) {

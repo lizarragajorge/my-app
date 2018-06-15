@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { Request } from './Request';
+import { Request } from './models/Request';
 
 @Component({
     selector: 'requests-page',
-    templateUrl: './requests.component.html',
-    styleUrls: ['./app.component.css']
+    templateUrl: './templates/requests.component.html',
+    styleUrls: ['./styles/app.component.css']
 })
 
 export class RequestsComponent {

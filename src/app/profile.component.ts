@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { Person } from './Person';
-import { Activity } from './Activity';
+import { Person } from './models/Person';
+import { Activity } from './models/Activity';
 import { AngularFireDatabase } from 'angularfire2/database';
 
 @Component({
     selector: 'profile-page',
-    templateUrl: './profile.component.html',
-    styleUrls: ['./app.component.css']
+    templateUrl: './templates/profile.component.html',
+    styleUrls: ['./styles/app.component.css']
 })
 
 export class ProfileComponent {

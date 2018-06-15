@@ -2,8 +2,8 @@ import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
     selector: 'actions-page',
-    templateUrl: './actions.component.html',
-    styleUrls: ['./app.component.css']
+    templateUrl: './templates/actions.component.html',
+    styleUrls: ['./styles/app.component.css']
 })
 
 export class ActionsComponent {

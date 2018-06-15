@@ -1,12 +1,12 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-import { Person } from './Person';
+import { Person } from './models/Person';
 import { AppComponent } from './app.component';
 import { AngularFireDatabase } from 'angularfire2/database';
 
 @Component({
   selector: 'home-page',
-  templateUrl: './home.component.html',
-  styleUrls: ['./app.component.css']
+  templateUrl: './templates/home.component.html',
+  styleUrls: ['./styles/app.component.css']
 })
 
 export class HomeComponent

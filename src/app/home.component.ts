@@ -11,7 +11,6 @@ import { AngularFireDatabase } from 'angularfire2/database';
 
 export class HomeComponent
 {
-  title = 'app';
   actionPage = false;
   public firebase;
   public people;

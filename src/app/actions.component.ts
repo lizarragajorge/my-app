@@ -7,12 +7,9 @@ import { Component, Output, EventEmitter } from '@angular/core';
 })
 
 export class ActionsComponent {
-    title = 'app';
-
     @Output() selectAction = new EventEmitter<string>();
 
     onSelectAction(a: string) {
         this.selectAction.emit(a);
-        console.log("calling select action")
     }
 }

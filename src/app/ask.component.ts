@@ -8,6 +8,5 @@ import { AppComponent } from './app.component';
 })
 
 export class AskComponent {
-    title = 'app';
 
 }

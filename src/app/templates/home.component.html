@@ -8,6 +8,12 @@
 
 <ul id="people" class="list-group list-people">
     <li (click)="onSelectPerson('actions')" (selectAction)="changeActionPage($event)" *ngFor="let p of people" class="people-item list-group-item d-flex justify-content-between align-items-center">
-        <img class="img-fluid img-person" src="https://loremflickr.com/75/75" />{{ p.activity.firstName + " " + p.activity.lastName}}
+        <div class="col-3">
+            <img class="img-fluid img-person" src="https://loremflickr.com/75/75/{{ p.activity.lastName }}" />
+        </div>
+        <div class="col-9">
+            <span class="people-name">{{ p.activity.firstName + " " + p.activity.lastName}}</span>
+            <span class="people-office">{{ p.activity.office }}</span>
+        </div>
     </li>
 </ul>

@@ -30,6 +30,16 @@ export class ProfileComponent {
         });
     }
 
+    makeActivityActive(p) {
+
+        if(p.activity.isActive) {
+            p.activity.isActive = false;
+        } else {
+            p.activity.isActive = true;
+        }
+        
+    }
+
     title = 'app';
 
     addActivity() {
